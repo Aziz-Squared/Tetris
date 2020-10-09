@@ -124,10 +124,6 @@ public class Square {
 			case RIGHT:
 				col++;
 				break;
-			
-
-			// currently doesn't support moving LEFT or RIGHT
-			// MODIFY so that the Square moves appropriately
 			}
 		}
 	}

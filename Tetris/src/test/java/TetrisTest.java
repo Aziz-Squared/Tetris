@@ -39,7 +39,7 @@ public class TetrisTest implements ParameterResolver {
 
     void testDrop() {
         Grid g = new Grid();
-        LShape l = new LShape(5, 5, g);
+        LShape l = new LShape(5, 5, g, Color.magenta);
         g.set(5, 5, Color.BLACK);
         l.move(Direction.DROP);
         assertTrue(g.isSet(5, 5));
