@@ -27,7 +27,7 @@ public class Game {
 	public Game(Tetris display) {
 		grid = new Grid();
 		this.display = display;
-		piece = new LShape(1, Grid.WIDTH / 2 - 1, grid, Color.magenta);
+		piece = new LShape(1, Grid.WIDTH / 2 - 1, grid, Color.magenta, 0);
 		isOver = false;
 	}
 
@@ -90,7 +90,7 @@ public class Game {
 	private void updatePiece() {
 		if (piece == null) {
 			// CREATE A NEW PIECE HERE
-			piece = new LShape(1, Grid.WIDTH/2 -1, grid, Color.magenta);
+			piece = new LShape(1, Grid.WIDTH/2 -1, grid, Color.magenta, 0);
 
 		}
 

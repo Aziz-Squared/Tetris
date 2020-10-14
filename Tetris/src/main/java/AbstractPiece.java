@@ -2,7 +2,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.Graphics;
 
-public class AbstractPiece implements Piece {
+public abstract class AbstractPiece implements Piece {
 
     protected boolean ableToMove; // can this piece move
 
@@ -14,16 +14,20 @@ public class AbstractPiece implements Piece {
     // number of squares in one Tetris game piece
     protected static final int PIECE_COUNT = 4;
 
-    public AbstractPiece(int r, int c, Grid g, Color color) {
+    public AbstractPiece(int r, int c, Grid g, Color color, int pieceType) {
 
         grid = g;
         square = new Square[PIECE_COUNT];
         ableToMove = true;
 
-        square[0] = new Square(g, r - 1, c, color, true);
-        square[1] = new Square(g, r, c, color, true);
-        square[2] = new Square(g, r + 1, c, color, true);
-        square[3] = new Square(g, r + 1, c + 1, color, true);
+		if (pieceType == 0){
+
+			square[0] = new Square(g, r - 1, c, color, true);
+			square[1] = new Square(g, r, c, color, true);
+			square[2] = new Square(g, r + 1, c, color, true);
+			square[3] = new Square(g, r + 1, c + 1, color, true);
+
+		}
 
     }
 

@@ -118,35 +118,6 @@ public class Grid {
 		}
 	}
 	
-
-// 	public void checkRows() {
-//         clearRows(0);
-//     }
- 
-// private void clearRows(int row){
-//     for (int i = 0; i < HEIGHT; i++){
-//     boolean shouldClearRow = true;
-//     for (int j = 0; j < WIDTH; j++){
-//         if (!isSet(i, j)){
-//             shouldClearRow = false;
-                     
-//         }
-//     }
-//         if(shouldClearRow == true){
-//             moveRowsDown(i);
-//             clearRows(i);
-//          }
-//         }    
-//     }
- 
-// private void moveRowsDown(int row){
-//     for (int i = row + 1; i < HEIGHT; i++){
-//         for (int j = 0; j < WIDTH; j++){
-//             board[i][j + 1] = board[i][j];
-//         }
-//     }
-// }
-
 	/**
 	 * Draws the grid on the given Graphics context
 	 */
