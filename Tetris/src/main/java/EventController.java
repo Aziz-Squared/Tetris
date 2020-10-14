@@ -67,10 +67,13 @@ public class EventController extends KeyAdapter implements ActionListener {
 			case KeyEvent.VK_DOWN:
 				handleMove(Direction.DOWN);
 				break;
-
-			}
-		}
-	}
+            case KeyEvent.VK_UP:
+                game.rotatePiece();
+                break;
+            }
+        }
+    }
+                    
 
 	/** Updates the game periodically based on a timer event */
 	public void actionPerformed(ActionEvent e) {

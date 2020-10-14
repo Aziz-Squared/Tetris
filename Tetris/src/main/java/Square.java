@@ -65,7 +65,15 @@ public class Square {
 	 */
 	public int getCol() {
 		return col;
-	}
+    }
+    
+    public void setRow(int newRow) {
+        this.row=newRow;
+    }
+    
+    public void setCol(int newCol) {
+        this.col=newCol;
+    }
 
 	/**
 	 * Returns true if this Square can move 1 spot in direction d

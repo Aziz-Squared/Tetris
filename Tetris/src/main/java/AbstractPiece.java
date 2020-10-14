@@ -83,7 +83,47 @@ public abstract class AbstractPiece implements Piece {
 
 		return answer;
 	}
-
-
     
+    /** This rotates the Piece*/
+    for(int i = 0; i<PIECE_COUNT; i++)
+    { if(i==1)
+    {
+        ;
+    }
+     else {
+         int py = square[1].getRow();
+         int px = square[1].getCol();
+         int y1 = square[i].getRow();
+         int x1 = square[i].getCol();
+         int x2 = y1+px-py;
+         int y2 = x1+px-px;
+         if ((0<=x2)&&(x2<=Grid.WIDTH)&&(0<=y2)&&(y2<=Grid.HEIGHT))
+         {
+             continue;
+         }
+         else
+             check = false;
+     }
+    }
+    if(check==true)
+    {
+        for(int i=0;i<PIECE_COUNT;i++)
+        {
+            if(i==1)
+            {
+                ;
+            }
+            else {
+                int py = square[1].getRow();
+                int px = square[1].getCol();
+                int y1 = square[i].getRow();
+                int x1 = square[i].getCol();
+                int x2 = px+py-y1;
+                int y2 = x1+py-px;
+                square[i].setCol(x2);
+                square[i].setRow(y2);
+            }
+        }
+    }
+}
 }
