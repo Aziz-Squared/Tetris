@@ -9,5 +9,6 @@ public interface Piece {
     public Point[] getLocations();
     public Color getColor();
     public boolean canMove(Direction direction);
+    public void rotate();
     
 }
