@@ -85,15 +85,16 @@ public class Grid {
 	 * the top row set to empty
 	 */
 	public void checkRows() {
-		boolean isRowFilled = true;
+		//boolean isRowFilled = true;
 		for (int row = 0; row < HEIGHT; row++){
-			isRowFilled = true;
+			boolean isRowFilled = true;
 			for (int col = 0; col < WIDTH; col++){
 				if (!isSet(row, col)){
-					isRowFilled = false;	
+					isRowFilled = false;
+                    break;
 				}
 			}
-			if (isRowFilled == true){
+			if (isRowFilled){
 				// for (int i = 0; i < WIDTH; i++){
 				// 	set(row, i, EMPTY);
 				// 	moveRowsDown(row);
@@ -104,9 +105,9 @@ public class Grid {
 	}
 	// Removes cleared rows and moves all other rows down
 	private void moveRowsDown(int r){
-		for (int col = 0; col < WIDTH; col++){
-			set(r,col,EMPTY);
-		}
+// 		for (int col = 0; col < WIDTH; col++){
+// 			set(r,col,EMPTY);
+// 		}
 		for (int row = r - 1; row >=0; row--){
 			for (int col = 0; col < WIDTH; col++){
 				if(isSet(row,col)){
