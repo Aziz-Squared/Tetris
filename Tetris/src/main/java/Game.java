@@ -70,6 +70,18 @@ public class Game {
 		display.update();
 		grid.checkRows();
 	}
+    
+    /**
+    * Rotates the piece
+    */
+    public void rotatePiece() {
+		if (piece != null) {
+			piece.rotate();
+		}
+		updatePiece();
+		display.update();
+		grid.checkRows();
+	}
 
 	/**
 	 * Returns true if the game is over
