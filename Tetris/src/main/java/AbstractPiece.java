@@ -81,22 +81,32 @@ public abstract class AbstractPiece implements Piece {
         return answer;
     }
 
-    public boolean canRotate() {
+    // public boolean canRotate() {
 
-        if (!ableToMove)
+    // if (!ableToMove)
+    // return false;
+
+    // if (grid.isSet(row + 1, col) || grid.isSet(row, col - 1) || grid.isSet(row,
+    // col + 1)) {
+    // ableToMove = false;
+    // }
+    // return ableToMove;
+    // }
+    public boolean canRotate() {
+        if (!ableToRotate)
             return false;
 
-        if (grid.isSet(row + 1, col) || grid.isSet(row, col - 1) || grid.isSet(row, col + 1)) {
-            ableToMove = false;
+        boolean answer = true;
+        for (int i = 0; i < PIECE_COUNT; i++) {
+            answer = answer && square[i].canRotate();
         }
-        return ableToMove;
+        return answer;
     }
 
-    public void rotate(){
-        canRotate();
-        if (ableToMove){
-            for (int i = 0; i < PIECE_COUNT; i++) {
+    public void rotate() {
 
+        if (canRotate()) {
+            for (int i = 0; i < PIECE_COUNT; i++) {
                 int py = square[1].getRow();
                 int px = square[1].getCol();
                 int y1 = square[i].getRow();
@@ -105,9 +115,25 @@ public abstract class AbstractPiece implements Piece {
                 int y2 = x1 + py - px;
                 square[i].setCol(x2);
                 square[i].setRow(y2);
-    
+
             }
         }
+
     }
 
+    // canRotate();
+    // if (ableToMove){
+    // for (int i = 0; i < PIECE_COUNT; i++) {
+
+    // int py = square[1].getRow();
+    // int px = square[1].getCol();
+    // int y1 = square[i].getRow();
+    // int x1 = square[i].getCol();
+    // int x2 = px + py - y1;
+    // int y2 = x1 + py - px;
+    // square[i].setCol(x2);
+    // square[i].setRow(y2);
+
+    // }
+    // }
 }

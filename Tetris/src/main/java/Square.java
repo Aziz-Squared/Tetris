@@ -12,6 +12,7 @@ public class Square {
 	private int row, col; // the grid location of this Square
 
 	private boolean ableToMove; // true if this Square can move
+	private boolean ableToRotate;
 
 	private Color color; // the color of this Square
 
@@ -51,6 +52,7 @@ public class Square {
 		this.col = col;
 		color = c;
 		ableToMove = mobile;
+		ableToRotate = mobile;
 	}
 
 	/**
@@ -106,6 +108,16 @@ public class Square {
 			break;
 		}
 		return move;
+	}
+
+	public boolean canRotate(){
+		if (!ableToRotate)
+			return false;
+		boolean rotate = true;
+		if (col == 0 || grid.isSet(row, col - 1) || col == Grid.WIDTH - 1 || grid.isSet(row, col + 1)){
+			rotate = false;
+		}
+		return rotate;
 	}
 
 	/**
