@@ -6,12 +6,13 @@ public abstract class AbstractPiece implements Piece {
 
     protected boolean ableToMove; // can this piece move
 
+    protected boolean ableToRotate; // can this piece rotate
+
     protected Square[] square; // the squares that make up this piece
 
     // Made up of PIECE_COUNT squares
     protected Grid grid; // the board this piece is on
-
-    protected boolean check;
+    private int row, col;
 
     // number of squares in one Tetris game piece
     protected static final int PIECE_COUNT = 4;
@@ -21,11 +22,9 @@ public abstract class AbstractPiece implements Piece {
         grid = g;
         square = new Square[PIECE_COUNT];
         ableToMove = true;
-
-        // square[0] = new Square(g, r - 1, c, color, true);
-        // square[1] = new Square(g, r, c, color, true);
-        // square[2] = new Square(g, r + 1, c, color, true);
-        // square[3] = new Square(g, r + 1, c + 1, color, true);
+        ableToRotate = true;
+        row = r;
+        col = c;
 
     }
 
@@ -82,7 +81,33 @@ public abstract class AbstractPiece implements Piece {
         return answer;
     }
 
-    /** This rotates the Piece */
+    public boolean canRotate() {
+
+        if (!ableToMove)
+            return false;
+
+        if (grid.isSet(row + 1, col) || grid.isSet(row, col - 1) || grid.isSet(row, col + 1)) {
+            ableToMove = false;
+        }
+        return ableToMove;
+    }
+
+    public void rotate(){
+        canRotate();
+        if (ableToMove){
+            for (int i = 0; i < PIECE_COUNT; i++) {
+
+                int py = square[1].getRow();
+                int px = square[1].getCol();
+                int y1 = square[i].getRow();
+                int x1 = square[i].getCol();
+                int x2 = px + py - y1;
+                int y2 = x1 + py - px;
+                square[i].setCol(x2);
+                square[i].setRow(y2);
     
+            }
+        }
+    }
 
 }

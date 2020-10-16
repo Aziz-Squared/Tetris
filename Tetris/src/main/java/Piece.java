@@ -10,5 +10,6 @@ public interface Piece {
     public Color getColor();
     public boolean canMove(Direction direction);
     public void rotate();
+    public boolean canRotate();
     
 }
