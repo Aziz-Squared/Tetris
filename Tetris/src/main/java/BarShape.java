@@ -15,4 +15,10 @@ public class BarShape extends AbstractPiece {
        square[3] = new Square(g, r, c + 2, Color.cyan, true);
    }
 
+   @Override
+   public void rotate() {
+      
+
+   }
+
 }

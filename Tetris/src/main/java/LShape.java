@@ -18,9 +18,15 @@ import java.awt.Point;
  */
 public class LShape extends AbstractPiece{
 
-	public LShape(int r, int c, Grid g, Color color, int pieceType) {
-		super(r, c, g, color, pieceType);
+	public LShape(int r, int c, Grid g, Color color) {
+		super(r, c, g, color);
 		
+	}
+
+	@Override
+	public void rotate() {
+		// TODO Auto-generated method stub
+
 	}
 	
 }
