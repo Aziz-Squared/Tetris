@@ -22,10 +22,10 @@ public abstract class AbstractPiece implements Piece {
         square = new Square[PIECE_COUNT];
         ableToMove = true;
 
-        square[0] = new Square(g, r - 1, c, color, true);
-        square[1] = new Square(g, r, c, color, true);
-        square[2] = new Square(g, r + 1, c, color, true);
-        square[3] = new Square(g, r + 1, c + 1, color, true);
+        // square[0] = new Square(g, r - 1, c, color, true);
+        // square[1] = new Square(g, r, c, color, true);
+        // square[2] = new Square(g, r + 1, c, color, true);
+        // square[3] = new Square(g, r + 1, c + 1, color, true);
 
     }
 
@@ -83,40 +83,6 @@ public abstract class AbstractPiece implements Piece {
     }
 
     /** This rotates the Piece */
-    public void rotate() {
-        for (int i = 0; i < PIECE_COUNT; i++) {
-            if (i == 1) {
-                ;
-            } else {
-                int py = square[1].getRow();
-                int px = square[1].getCol();
-                int y1 = square[i].getRow();
-                int x1 = square[i].getCol();
-                int x2 = y1 + px - py;
-                int y2 = x1 + px - px;
-                if ((0 <= x2) && (x2 <= Grid.WIDTH) && (0 <= y2) && (y2 <= Grid.HEIGHT)) {
-                    continue;
-                } else
-                    check = false;
-            }
-        }
-        if (check == true) {
-            for (int i = 0; i < PIECE_COUNT; i++) {
-                if (i == 1) {
-                    ;
-                } else {
-                    int py = square[1].getRow();
-                    int px = square[1].getCol();
-                    int y1 = square[i].getRow();
-                    int x1 = square[i].getCol();
-                    int x2 = px + py - y1;
-                    int y2 = x1 + py - px;
-                    square[i].setCol(x2);
-                    square[i].setRow(y2);
-                }
-            }
-        }
-
-    }
+    
 
 }

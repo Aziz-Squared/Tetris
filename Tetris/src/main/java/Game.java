@@ -38,7 +38,7 @@ public class Game {
 // 		Random rand = new Random();
 // 		int randomShape = rand.nextInt(7);
 		
-		piece = new LShape(1, Grid.WIDTH / 2 - 1, grid, Color.MAGENTA);
+		
         
 		isOver = false;
 	}
@@ -113,8 +113,6 @@ public class Game {
 	/** Updates the piece */
 	private void updatePiece() {
 		if (piece == null) {
-			// CREATE A NEW PIECE HERE
-            
 			// Array of all the shapes
         Piece [] p = {new TShape(1, Grid.WIDTH / 2, grid, Color.YELLOW), new ZShape(1,Grid.WIDTH / 2, grid, Color.RED),
 				new SquareShape(1, Grid.WIDTH / 2, grid, Color.GRAY),new BarShape(1,Grid.WIDTH / 2 - 1, grid, Color.CYAN),
