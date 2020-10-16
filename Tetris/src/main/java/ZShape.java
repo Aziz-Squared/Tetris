@@ -14,5 +14,11 @@ public class ZShape extends AbstractPiece {
        square[2] = new Square(g, r + 1, c, Color.red, true);
        square[3] = new Square(g, r + 1, c + 1, Color.red, true);
    }
+
+   @Override
+   public void rotate() {
+      // TODO Auto-generated method stub
+
+   }
 }
 

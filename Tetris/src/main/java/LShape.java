@@ -22,5 +22,11 @@ public class LShape extends AbstractPiece{
 		super(r, c, g, color);
 		
 	}
+
+	@Override
+	public void rotate() {
+		// TODO Auto-generated method stub
+
+	}
 	
 }

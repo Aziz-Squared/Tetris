@@ -15,4 +15,10 @@ public class SShape extends AbstractPiece {
        square[3] = new Square(g, r + 1, c - 1, Color.green, true);
    }
 
+   @Override
+   public void rotate() {
+      // TODO Auto-generated method stub
+
+   }
+
 }

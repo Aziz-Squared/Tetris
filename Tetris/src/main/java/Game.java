@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.Random;
 
 /**
  * Manages the game Tetris. Keeps track of the current piece and the grid.

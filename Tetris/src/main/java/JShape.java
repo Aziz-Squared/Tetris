@@ -14,4 +14,10 @@ public class JShape extends AbstractPiece {
        square[2] = new Square(g, r + 1, c, Color.blue, true);
        square[3] = new Square(g, r + 1, c - 1, Color.blue, true);
    }
+
+   @Override
+   public void rotate() {
+      // TODO Auto-generated method stub
+
+   }
 }

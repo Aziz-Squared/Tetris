@@ -15,4 +15,10 @@ public class TShape extends AbstractPiece {
        square[3] = new Square(g, r + 1, c, Color.yellow, true);
    }
 
+   @Override
+   public void rotate() {
+      // TODO Auto-generated method stub
+
+   }
+
 }
