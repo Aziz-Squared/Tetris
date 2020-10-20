@@ -27,19 +27,7 @@ public class Game {
 	 */
 	public Game(Tetris display) {
 		grid = new Grid();
-		this.display = display;
-        
-        
-//         Piece [] p = {new TShape(1, Grid.WIDTH / 2, grid, Color.YELLOW), new ZShape(1,Grid.WIDTH / 2, grid, Color.RED),
-// 				new SquareShape(1, Grid.WIDTH / 2, grid, Color.GRAY),new BarShape(1,Grid.WIDTH / 2 - 1, grid, Color.CYAN),
-// 				new SShape(1, Grid.WIDTH / 2, grid, Color.GREEN), new JShape(1, Grid.WIDTH / 2, grid, Color.BLUE),
-// 				new LShape(1, Grid.WIDTH / 2 - 1, grid, Color.MAGENTA)};
-	
-// 		Random rand = new Random();
-// 		int randomShape = rand.nextInt(7);
-		
-		
-        
+		this.display = display;        
 		isOver = false;
 	}
 

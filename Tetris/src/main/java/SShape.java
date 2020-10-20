@@ -3,11 +3,8 @@ import java.awt.Color;
 public class SShape extends AbstractPiece {
   
    public SShape(int r, int c, Grid g,Color color) {
-	   super(r,c,g,color);
-       grid = g;
-       square = new Square[PIECE_COUNT];
-       ableToMove = true;
-
+      super(r,c,g,color);
+      
        // Create the squares
        square[0] = new Square(g, r, c + 1, Color.green, true);
        square[1] = new Square(g, r, c, Color.green, true);

@@ -110,6 +110,10 @@ public class Square {
 		return move;
 	}
 
+	/**
+	 * Does a check to see if the squares are able to rotate
+	 * @return
+	 */
 	public boolean canRotate(){
 		if (!ableToRotate)
 			return false;

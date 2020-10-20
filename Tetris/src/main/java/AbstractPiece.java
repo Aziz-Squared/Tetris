@@ -81,17 +81,7 @@ public abstract class AbstractPiece implements Piece {
         return answer;
     }
 
-    // public boolean canRotate() {
-
-    // if (!ableToMove)
-    // return false;
-
-    // if (grid.isSet(row + 1, col) || grid.isSet(row, col - 1) || grid.isSet(row,
-    // col + 1)) {
-    // ableToMove = false;
-    // }
-    // return ableToMove;
-    // }
+    // Checks to see if the squares can rotate
     public boolean canRotate() {
         if (!ableToRotate)
             return false;
@@ -103,6 +93,7 @@ public abstract class AbstractPiece implements Piece {
         return answer;
     }
 
+    // Rotates the squares
     public void rotate() {
 
         if (canRotate()) {
@@ -121,19 +112,5 @@ public abstract class AbstractPiece implements Piece {
 
     }
 
-    // canRotate();
-    // if (ableToMove){
-    // for (int i = 0; i < PIECE_COUNT; i++) {
 
-    // int py = square[1].getRow();
-    // int px = square[1].getCol();
-    // int y1 = square[i].getRow();
-    // int x1 = square[i].getCol();
-    // int x2 = px + py - y1;
-    // int y2 = x1 + py - px;
-    // square[i].setCol(x2);
-    // square[i].setRow(y2);
-
-    // }
-    // }
 }

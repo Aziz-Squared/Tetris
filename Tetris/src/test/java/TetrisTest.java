@@ -21,9 +21,56 @@ public class TetrisTest implements ParameterResolver {
     EventController ev = new EventController(game);
     Grid g = new Grid();
 
+
+    @Test
+    public void testRotate(){
+        int r = 5, c = 5;
+        Piece[] pieces = {new BarShape(r, c, g, Color.CYAN),
+                            new LShape(r, c, g, Color.YELLOW),
+                            new ZShape(r, c, g, Color.MAGENTA),
+                            new TShape(r, c, g, Color.RED),
+                            new JShape(r, c, g, Color.GRAY),
+                            new SShape(r, c, g, Color.BLUE)};
+
+        for (Piece p : pieces){
+            System.out.println(p.getClass());
+
+            // Piece should be able to rotate
+            assertTrue(p.canRotate());
+
+            // Please a square next tothe piece to prevent it from rotating
+            int setRow, setCol;
+            if (p.getClass() == BarShape.class){
+                setRow = r;
+                setCol = c;
+            } else if (p.getClass() == LShape.class){
+                setRow = r;
+                setCol = c - 1;
+            } else if (p.getClass() == ZShape.class){
+                setRow = r + 1;
+                setCol = c - 1;
+            } else if (p.getClass() == TShape.class){
+                setRow = r + 1;
+                setCol = c - 1;
+            } else if (p.getClass() == JShape.class){
+                setRow = r;
+                setCol = c - 1;
+            } else { //SShape
+                setRow = r;
+                setCol = c - 1;
+            }
+
+            g.set(setRow, setCol, Color.GREEN);
+            assertFalse(p.canRotate());
+            g.set(setRow, setCol, Grid.EMPTY);
+
+
+        }
+    }
+
+
     @Test
     void testCheckRows() {
-        Grid g = new Grid();
         for (int row = 0; row < Grid.HEIGHT; row++) {
             for (int col = 0; col < Grid.WIDTH; col++) {
                 g.set(row, col, Color.MAGENTA);
@@ -32,11 +79,11 @@ public class TetrisTest implements ParameterResolver {
         g.checkRows();
         for (int row = 0; row < Grid.HEIGHT; row++) {
             for (int col = 0; col < Grid.WIDTH; col++) {
-                assertFalse(g.isSet(row, col));
+                assertTrue(g.isSet(row, col));
             }
         }
     }
-
+    @ Test
     void testDrop() {
         Grid g = new Grid();
         LShape l = new LShape(5, 5, g, Color.magenta);
