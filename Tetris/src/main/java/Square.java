@@ -143,7 +143,7 @@ public class Square {
         		}
         	}
         }
-        if (r_new < this.row) {
+        if (r2 < this.row) {
         	for (int i = this.row; i >= c2; i--) {
         		if (grid.isSet(i, c2)) {
         			rotate = false;
@@ -151,9 +151,9 @@ public class Square {
         	} 
         }
         
-		if (col == 0 || grid.isSet(row, col - 1) || col == Grid.WIDTH - 1 || grid.isSet(row, col + 1)){
-			rotate = false;
-		}
+		// if (col == 0 || grid.isSet(row, col - 1) || col == Grid.WIDTH - 1 || grid.isSet(row, col + 1)){
+		// 	rotate = false;
+		// }
 		return rotate;
 	}
 

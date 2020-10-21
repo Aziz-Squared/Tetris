@@ -88,7 +88,7 @@ public abstract class AbstractPiece implements Piece {
 
         boolean answer = true;
         for (int i = 0; i < PIECE_COUNT; i++) {
-            answer = answer && square[i].canRotate();
+            answer = answer && square[i].canRotate(square[i]);
         }
         return answer;
     }
