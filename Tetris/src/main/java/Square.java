@@ -116,6 +116,13 @@ public class Square {
 		int r2 = c.row + (this.col - c.col);
 		int c2 = c.col + (c.row - this.row);
 
+		if (r2 >= Grid.HEIGHT || r2 < 0){
+			return false;
+		}
+		if (c2 < 0 || c2 >= Grid.WIDTH){
+			return false;
+		}
+
 		if (c2 > this.col) {
 			for (int i = this.col; i <= c2; i++) {
 				if (grid.isSet(this.row, i)) {
@@ -143,12 +150,9 @@ public class Square {
 					rotate = false;
 				}
 			}
+		
+		
 		}
-
-		// if (col == 0 || grid.isSet(row, col - 1) || col == Grid.WIDTH - 1 ||
-		// grid.isSet(row, col + 1)){
-		// rotate = false;
-		// }
 		return rotate;
 	}
 
@@ -160,7 +164,7 @@ public class Square {
 
 			this.row = r2;
 			this.col = c2;
-			System.out.println("rotate");
+			
 		}
 
 	}

@@ -65,7 +65,10 @@ public class Game {
     */
     public void rotatePiece() {
 		if (piece != null) {
-			piece.rotate();
+			if (piece.canRotate()){
+				piece.rotate();
+			}
+			
 		}
 		updatePiece();
 		display.update();
