@@ -118,6 +118,7 @@ public class Square {
         
 		boolean rotate = true;
         
+        // get destination
         int c2 = c.col + (c.row - this.row);
         int r2 = c.row + (this.col - c.col);
         
