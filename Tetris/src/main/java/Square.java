@@ -114,10 +114,42 @@ public class Square {
 	 * Does a check to see if the squares are able to rotate
 	 * @return
 	 */
-	public boolean canRotate(){
-		if (!ableToRotate)
-			return false;
+	public boolean canRotate(Square c) {
+        
 		boolean rotate = true;
+        
+        int c2 = c.col + (c.row - this.row);
+        int r2 = c.row + (this.col - c.col);
+        
+        if (c2 > this.col) {
+        	for (int i = this.col; i <= c2; i++) {
+        		if (grid.isSet(this.row, i)) {
+        			rotate = false;
+        		}
+        	}
+        }
+        if (c2 < this.col ) {
+        	for (int i = this.col; i >= c2; i--) {
+        		if (grid.isSet(this.row, i)) {
+        			rotate = false;
+        		}
+        	} 
+        } 
+        if (r2 > this.row) {
+        	for (int i = this.row; i <=  r2; i++) {
+        		if (grid.isSet(i, c2)) {
+        			rotate = false;
+        		}
+        	}
+        }
+        if (r_new < this.row) {
+        	for (int i = this.row; i >= c2; i--) {
+        		if (grid.isSet(i, c2)) {
+        			rotate = false;
+        		}
+        	} 
+        }
+        
 		if (col == 0 || grid.isSet(row, col - 1) || col == Grid.WIDTH - 1 || grid.isSet(row, col + 1)){
 			rotate = false;
 		}
