@@ -89,6 +89,7 @@ public abstract class AbstractPiece implements Piece {
         boolean answer = true;
         for (int i = 0; i < PIECE_COUNT; i++) {
             answer = answer && square[i].canRotate(square[i]);
+
         }
         return answer;
     }
@@ -96,21 +97,24 @@ public abstract class AbstractPiece implements Piece {
     // Rotates the squares
     public void rotate() {
 
-        if (canRotate()) {
-            for (int i = 0; i < PIECE_COUNT; i++) {
-                int py = square[1].getRow();
-                int px = square[1].getCol();
-                int y1 = square[i].getRow();
-                int x1 = square[i].getCol();
-                int x2 = px + py - y1;
-                int y2 = x1 + py - px;
-                square[i].setCol(x2);
-                square[i].setRow(y2);
-
-            }
+        for (int i = 0; i < PIECE_COUNT; i++) {
+            square[i].rotate(square[1]);
         }
 
-    }
+        // if (canRotate()) {
+        // for (int i = 0; i < PIECE_COUNT; i++) {
+        // int py = square[1].getRow();
+        // int px = square[1].getCol();
+        // int y1 = square[i].getRow();
+        // int x1 = square[i].getCol();
+        // int x2 = px + py - y1;
+        // int y2 = x1 + py - px;
+        // square[i].setCol(x2);
+        // square[i].setRow(y2);
 
+        // }
+        // }
+
+    }
 
 }

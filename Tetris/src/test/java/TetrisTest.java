@@ -37,11 +37,12 @@ public class TetrisTest implements ParameterResolver {
 
             // Piece should be able to rotate
             assertTrue(p.canRotate());
+            System.out.println("rotate");
 
-            // Please a square next tothe piece to prevent it from rotating
+            // place a square next to the piece to prevent it from rotating
             int setRow, setCol;
             if (p.getClass() == BarShape.class){
-                setRow = r;
+                setRow = r + 1;
                 setCol = c;
             } else if (p.getClass() == LShape.class){
                 setRow = r;
